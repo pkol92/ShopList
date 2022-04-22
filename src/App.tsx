@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { ActionBar, DetailsModal, Header, Table } from './components';
+import { Container } from './styles';
+
+export const App = () => {
+  const isDetailsModalOpen = false;
+  const isAddNewDetailsModalOpen = false;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container id="main-container">
+      <Header />
+      <ActionBar />
+      <Table />
+      {isDetailsModalOpen && <DetailsModal />}
+      {isAddNewDetailsModalOpen && <DetailsModal />}
+    </Container>
   );
 }
-
-export default App;
