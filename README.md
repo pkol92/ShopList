@@ -57,6 +57,6 @@ Low priority items shoudl be added after finishing previous parts.
 
 ### Tips
 
-- its allowed to use any helpers libraries, components or frameworks that will help make a work done
+- its allowed to use any helper libraries, components or frameworks that will help make a work done
 
 
