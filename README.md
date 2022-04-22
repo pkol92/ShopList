@@ -41,7 +41,8 @@ Some addiional stuff can also be added like: styling header area in some eye cac
 Ability to remove items from a list with confirmation, to prevent button accidential clicks. Adding alphabetical sorting to specific table/list columns. 
  
 Below there is a list of tasks marked with priorities.
-Firstly focus on HIGH priority items, then MEDIUM and lastly LOW.
+Firstly focus on HIGH priority items, then MEDIUM.
+Low priority items shoudl be added after finishing previous parts.
 
 1. Create a button in the top ActionBar area to open the modal that will be created in next point  - High 
 2. Create Modal with the form for adding new shop/warehouse item - High
