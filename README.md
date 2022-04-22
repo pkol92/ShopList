@@ -52,6 +52,7 @@ Firstly focus on HIGH priority items, then MEDIUM and lastly LOW.
 7. Add Error handling for task #2 - Medium
 8. Create a button for delete single record (confirmation is nice to have) - Medium
 9. Add Sorting possibility for table/list - Low
+10. Add ability to persist data in the browser. After browser refresh added items shoudl be remembered and shown to the user. - Low
 
 ### Tips
 
