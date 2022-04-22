@@ -53,4 +53,8 @@ Firstly focus on HIGH priority items, then MEDIUM and lastly LOW.
 8. Create a button for delete single record (confirmation is nice to have) - Medium
 9. Add Sorting possibility for table/list - Low
 
+### Tips
+
+- its allowed to use any helpers libraries, components or frameworks available in NPM
+
 
