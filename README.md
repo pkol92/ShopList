@@ -53,10 +53,10 @@ Low priority items shoudl be added after finishing previous parts.
 7. Add Error handling for task #2 - Medium
 8. Create a button for delete single record (confirmation is nice to have) - Medium
 9. Add Sorting possibility for table/list - Low
-10. Add ability to persist data in the browser. After browser refresh added items shoudl be remembered and shown to the user. - Low
+10. Add ability to persist data in the browser. After browser refresh added items shoud be remembered and shown to the user. - Low
 
 ### Tips
 
-- its allowed to use any helper libraries, components or frameworks that will help make a work done
+- Its allowed to use any helper libraries, components or frameworks that will help make a work done
 
 
