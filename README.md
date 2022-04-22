@@ -55,6 +55,6 @@ Firstly focus on HIGH priority items, then MEDIUM and lastly LOW.
 
 ### Tips
 
-- its allowed to use any helpers libraries, components or frameworks available in NPM
+- its allowed to use any helpers libraries, components or frameworks that will help make a work done
 
 
