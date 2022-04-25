@@ -16,8 +16,10 @@ export const App = () => {
 
   return (
     <Container id="main-container">
-      <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
+      <div className='header-container'>
       <Header />
+      <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
+      </div>
       {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem}/>}
     </Container>
   );

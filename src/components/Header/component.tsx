@@ -8,7 +8,7 @@ export const Header: FC = () => {
     <StyledHeader>
         <nav>
           <StyledLogo>
-          <img className='logo' src={logo} alt={'logo'}></img>
+          <img className='logo' src={logo} alt={'logo'} />
           </StyledLogo>
         </nav>
     </StyledHeader> 
