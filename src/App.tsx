@@ -13,6 +13,7 @@ export const App = () => {
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
       {isAddNewDetailsModalOpen && <DetailsModal />}
+      <span className="text-3xl">Przyklad dzialania talwinda</span>
     </Container>
   );
 }
