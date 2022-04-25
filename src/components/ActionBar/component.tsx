@@ -1,10 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { ActionBarContainer, Button } from "./styles";
+import { DetailsModal } from "../DetailsModal";
 
 export const ActionBar: FC = () => {
+  const [show, setShow] = useState(false);
+
   return (
     <ActionBarContainer>
-      <Button>Add Item</Button>
+      <Button onClick={() => setShow(!show)}>Add Item</Button>
+      {show && <DetailsModal />}
     </ActionBarContainer>
   );
 };
