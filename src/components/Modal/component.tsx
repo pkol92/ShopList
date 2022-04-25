@@ -16,10 +16,9 @@ export const Modal: FC<Props> = ({ children }) => {
     };
   }, []);
 
-  return ReactDom.createPortal(
-    <Container>
-      <Overlay>{children}</Overlay>
-    </Container>,
-    document.getElementById('main-container') as HTMLElement
+  return (
+    <div className='fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60 flex justify-center items-center'>
+      {children}
+    </div>
   );
 };
