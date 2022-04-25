@@ -4,14 +4,19 @@ import { ActionBar, AddNewRecordModal, DetailsModal, Header, Item, Table } from 
 import { Container } from './styles';
 
 export const App = () => {
-  const isDetailsModalOpen = false;
-  const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] = useState<boolean>(true);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] = useState<boolean>(false);
 
   const [products, setProducts] = useState<Item[]>([]);
 
   const addItem = (newItem: Item) => {
     setProducts(products => [...products, newItem]);
     setIsAddNewDetailsModalOpen(false);
+    changeSelectedItem(newItem);
+  }
+
+  const changeSelectedItem = (item: Item) => {
+    setSelectedItem(item);
   }
 
   return (
@@ -20,8 +25,9 @@ export const App = () => {
       <Header />
       <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
       </div>
-      <Table products={products}/>
+      <Table products={products} onItemSelect={changeSelectedItem}/>
       {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem}/>}
+      {selectedItem && <DetailsModal product={selectedItem}/>}
     </Container>
   );
 }

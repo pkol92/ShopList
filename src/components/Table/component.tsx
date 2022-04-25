@@ -4,23 +4,17 @@ import { Record } from "../Record";
 import { StyledTable } from "./styles";
 
 interface TableProps {
-  products: Item[];
+  products: Item[],
+  onItemSelect: (item: Item) => void,
 }
 
-export const Table: FC<TableProps> = ({ products }) => {
+export const Table: FC<TableProps> = ({products, onItemSelect}) => {
   return (
     <StyledTable>
       <span className="font-bold text-4xl">Products:</span>
       <table>
         <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-          </tr>
-          {products.map((product) => (
-            <Record product={product} />
-          ))}
+          {products.map(product => <Record product={product} onItemSelect={onItemSelect}/>)}
         </tbody>
       </table>
     </StyledTable>

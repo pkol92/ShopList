@@ -3,10 +3,11 @@ import { Item } from '../AddNewRecordModal';
 import { StyledRecord } from './styles';
 
 interface RecordProps {
-  product: Item
+  product: Item,
+  onItemSelect: (item: Item) => void,
 }
 
-export const Record: FC<RecordProps> = ({product}) => {
+export const Record: FC<RecordProps> = ({product, onItemSelect}) => {
   const {name, description, price} = product;
 
   return (
