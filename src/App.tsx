@@ -12,7 +12,6 @@ export const App = () => {
   const addItem = (newItem: Item) => {
     setProducts(products => [...products, newItem]);
     setIsAddNewDetailsModalOpen(false);
-    changeSelectedItem(newItem);
   }
 
   const changeSelectedItem = (item: Item) => {
