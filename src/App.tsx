@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ActionBar, DetailsModal, Header, Table } from "./components";
 import { Container } from "./styles";
 
-interface ShopItem {
+export interface ShopItem {
   name: string;
   description: string;
   price: number;
@@ -12,17 +12,21 @@ interface ShopItem {
 
 export const App = () => {
   const [items, setItems] = useState<ShopItem[]>([]);
-  const isDetailsModalOpen = false;
-  const isAddNewDetailsModalOpen = false;
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] =
+    useState(false);
 
   return (
     <Container id="main-container">
       <Header />
-      <ActionBar />
+      <ActionBar
+        items={items}
+        setItems={setItems}
+        setIsAddNewDetailsModalOpen={setIsAddNewDetailsModalOpen}
+      />
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
       {isAddNewDetailsModalOpen && <DetailsModal />}
     </Container>
   );
 };
-  
