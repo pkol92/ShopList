@@ -11,9 +11,9 @@ export const Record: FC<RecordProps> = ({product}) => {
 
   return (
     <StyledRecord>
-        {name}
-        {description}
-        {price}
+        <td>{name}</td>
+        <td>{description}</td>
+        <td>{price}</td>
     </StyledRecord> 
   )
 }

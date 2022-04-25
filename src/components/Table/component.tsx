@@ -1,20 +1,28 @@
-import React, { FC } from 'react';
-import { Item } from '../AddNewRecordModal/component';
-import { Record } from '../Record';
-import { StyledTable } from './styles';
+import React, { FC } from "react";
+import { Item } from "../AddNewRecordModal/component";
+import { Record } from "../Record";
+import { StyledTable } from "./styles";
 
 interface TableProps {
-  products: Item[]
+  products: Item[];
 }
 
-export const Table: FC<TableProps> = ({products}) => {
+export const Table: FC<TableProps> = ({ products }) => {
   return (
     <StyledTable>
-        <span className='font-bold text-4xl'>Products:</span>
+      <span className="font-bold text-4xl">Products:</span>
+      <table>
         <tbody>
-          {products.map(product => <Record product={product} />)}
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+          {products.map((product) => (
+            <Record product={product} />
+          ))}
         </tbody>
-    </StyledTable> 
-  )
-}
-    
+      </table>
+    </StyledTable>
+  );
+};
