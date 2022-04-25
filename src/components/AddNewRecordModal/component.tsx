@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react';
 import { Modal } from '../Modal';
 import { Container } from './styles';
 
-interface Item {
+export interface Item {
   name: string,
   description: string,
   price: number,

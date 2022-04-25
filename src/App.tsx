@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { ActionBar, DetailsModal, Header, Table } from './components';
+import { ActionBar, AddNewRecordModal, DetailsModal, Header, Item, Table } from './components';
 import { Container } from './styles';
 
 export const App = () => {
   const isDetailsModalOpen = false;
-  const isAddNewDetailsModalOpen = false;
+  const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] = useState<boolean>(true);
+
+  const [products, setProducts] = useState<Item[]>([]);
+
+  const addItem = (newItem: Item) => {
+    setProducts(products => [...products, newItem]);
+    setIsAddNewDetailsModalOpen(false);
+  }
+
   return (
     <Container id="main-container">
-      <Header />
       <ActionBar />
-      <Table />
-      {isDetailsModalOpen && <DetailsModal />}
-      {isAddNewDetailsModalOpen && <DetailsModal />}
-      <span className="text-3xl">Przyklad dzialania talwinda</span>
+      {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem}/>}
     </Container>
   );
 }
