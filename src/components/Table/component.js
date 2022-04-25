@@ -1,42 +1,42 @@
 
 import 'bootstrap/dist/css/bootstrap.css'
-// import { useState } from 'react'
-
+import { useState } from 'react'
+import DeleteItem from '../DeleteItem/DeleteItem'
 export const Table = () => {
 
-  // const [items, setItems] = useState([]) 
-
-  const test = [
+  const [test, setTest] = useState([
     {
       id: 1,
-      name: 'foobar',
+      name: 'edww',
       description: 'Lorem ipsum',
       price: 2,
       weight: 3
     },
     {
       id: 2,
-      name: 'foobar',
+      name: 'cccc',
       description: 'Lorem ipsum',
       price: 2,
       weight: 3
     },
     {
       id: 3,
-      name: 'foobar',
+      name: 'xxxx',
       description: 'Lorem ipsum',
       price: 2,
       weight: 3
     },
     {
       id: 4,
-      name: 'foobar',
+      name: 'zzzz',
       description: 'Lorem ipsum',
       price: 2,
       weight: 3
     },
 
-  ]
+  ]) 
+
+  
 
   return (
     <div className='container mt-5'>
@@ -47,6 +47,7 @@ export const Table = () => {
              <div>{item.description}</div> 
              <div>{item.price}</div> 
              <div>{item.weight}</div> 
+             <DeleteItem id={item.id} test={test} setTest={setTest}/>
           </div>
         ))}
       </div>
