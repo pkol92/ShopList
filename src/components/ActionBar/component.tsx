@@ -2,9 +2,14 @@ import React, { FC } from 'react';
 import { ActionBarContainer } from './styles';
 
 export const ActionBar: FC = () => {
+
+  function func(){
+    
+  }
+
   return (
     <ActionBarContainer>
-        Task #1
+        <button onClick={func}>Create</button>
     </ActionBarContainer> 
   )
 }
