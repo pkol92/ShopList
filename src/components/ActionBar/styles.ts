@@ -7,9 +7,9 @@ export const ActionBarContainer = styled.div`
     width: 20%;
 `
 export const ActionBarButton = styled.button`
-    background: #DF0000;
+    background: #40B7EA;
     padding: .7rem 1rem;
-    border: 1px solid #DF0000;
+    border: 1px solid #40B7EA;
     border-radius: 15px;
     transision: background 0.7s ease;
     color: white;
@@ -17,7 +17,7 @@ export const ActionBarButton = styled.button`
     
     &:hover{
         background: #FFF;
-        color: #DF0000
+        color: #40B7EA
     }
 `;
 ;

@@ -16,7 +16,7 @@ padding: .5rem;
 
 th{
     border: 1px solid black;
-    background: #DF0000;
+    background: #40B7EA;
     color:white;
     padding: .5rem;
 }
