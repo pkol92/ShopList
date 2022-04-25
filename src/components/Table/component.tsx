@@ -17,8 +17,8 @@ export const Table: FC<TableProps> = ({products, onItemSelect, onItemDelete}) =>
         <tbody>
         <tr>
             <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
+            <th className="hidden sm:visible">Description</th>
+            <th className="hidden sm:visible">Price</th>
             <th></th>
             <th></th>
           </tr>

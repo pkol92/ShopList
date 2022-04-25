@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledTable = styled.table`
 width: 100%;
-padding: 0 20%;
+padding: 0 5%;
 margin-top: 1rem;
 display: inline-flex;
 flex-direction: column;

@@ -15,8 +15,8 @@ export const Record: FC<RecordProps> = ({ product, onItemSelect, onItemDelete })
   return (
     <StyledRecord>
       <td>{name}</td>
-      <td>{description}</td>
-      <td>{price}</td>
+      <td className="hidden sm:visible">{description}</td>
+      <td className="hidden sm:visible">{price}</td>
       <td className="detail-button">
         <ActionBarButton>
           <button onClick={e => onItemSelect(product)}>More</button>
