@@ -1,10 +1,17 @@
 import React, { FC } from 'react';
-import { ActionBarContainer } from './styles';
+import { ActionBarContainer, ActionBarButton } from './styles';
 
-export const ActionBar: FC = () => {
+interface ActionBarProps {
+  onOpen: () => void
+}
+
+export const ActionBar: FC<ActionBarProps> = ({onOpen}) => {
+
   return (
     <ActionBarContainer>
-        Task #1
+      <ActionBarButton>
+        <button onClick={onOpen}>Create</button>
+        </ActionBarButton>
     </ActionBarContainer> 
   )
 }

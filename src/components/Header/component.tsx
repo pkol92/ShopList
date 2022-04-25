@@ -1,10 +1,16 @@
 import React, { FC } from 'react';
-import { StyledHeader } from './styles';
+import { StyledHeader, StyledLogo } from './styles';
+import logo from './logo.png'
+
 
 export const Header: FC = () => {
   return (
     <StyledHeader>
-        Task #6
+        <nav>
+          <StyledLogo>
+          <img className='logo' src={logo} alt={'logo'} />
+          </StyledLogo>
+        </nav>
     </StyledHeader> 
   )
 }

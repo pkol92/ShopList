@@ -1,12 +1,19 @@
 import React, { FC } from 'react';
+import { Item } from '../AddNewRecordModal';
 import { StyledRecord } from './styles';
 
-export const Record: FC = () => {
+interface RecordProps {
+  product: Item
+}
+
+export const Record: FC<RecordProps> = ({product}) => {
+  const {name, description, price} = product;
+
   return (
     <StyledRecord>
-        Task #3.2
-        Task #5
-        Task #8
+        {name}
+        {description}
+        {price}
     </StyledRecord> 
   )
 }
