@@ -41,7 +41,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd, onBack
           </label>
           
           </div>
-        <button className='p-2 bg-red-400 w-16 m-6 rounded-full' onClick={onClick}> Add</button>
+        <button className='p-2 bg-[#40B7EA] w-16 m-6 rounded-full' onClick={onClick}> Add</button>
       </Container>
     </Modal> 
   )
