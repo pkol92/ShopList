@@ -14,6 +14,11 @@ export const Table: FC<TableProps> = ({products, onItemSelect}) => {
       <span className="font-bold text-4xl">Products:</span>
       <table>
         <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
           {products.map(product => <Record product={product} onItemSelect={onItemSelect}/>)}
         </tbody>
       </table>
