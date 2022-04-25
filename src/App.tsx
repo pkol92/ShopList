@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ActionBar, DetailsModal, Header, Table } from './components';
 import { Container } from './styles';
-import AddItem from './components/AddItem/AddItem';
+// import AddItem from './components/AddItem/AddItem';
 export const App = () => {
   const isDetailsModalOpen = false;
   const isAddNewDetailsModalOpen = false;
@@ -13,7 +13,7 @@ export const App = () => {
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
       {isAddNewDetailsModalOpen && <DetailsModal />}
-      <AddItem/>
+      {/* <AddItem/> */}
     </Container>
   );
 }

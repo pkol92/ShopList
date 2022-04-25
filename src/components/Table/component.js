@@ -7,47 +7,78 @@ export const Table = () => {
   const [test, setTest] = useState([
     {
       id: 1,
-      name: 'edww',
+      name: 'Foobar',
       description: 'Lorem ipsum',
-      price: 2,
-      weight: 3
+      price: 22,
+      weight: 30
     },
     {
       id: 2,
-      name: 'cccc',
+      name: 'Foobar',
       description: 'Lorem ipsum',
-      price: 2,
-      weight: 3
+      price: 64,
+      weight: 12
     },
     {
       id: 3,
-      name: 'xxxx',
+      name: 'Foobar',
       description: 'Lorem ipsum',
-      price: 2,
-      weight: 3
+      price: 43,
+      weight: 20
     },
     {
       id: 4,
-      name: 'zzzz',
+      name: 'Foobar',
       description: 'Lorem ipsum',
-      price: 2,
+      price: 12,
       weight: 3
     },
+    {
+      id: 6,
+      name: 'Foobar',
+      description: 'Lorem ipsum',
+      price: 2,
+      weight: 50
+    },
+    {
+      id: 7,
+      name: 'Foobar',
+      description: 'Lorem ipsum',
+      price: 23,
+      weight: 34
+    },
+    {
+      id: 8,
+      name: 'Foobar',
+      description: 'Lorem ipsum',
+      price: 52,
+      weight: 3
+    },
+    {
+      id: 9,
+      name: 'Foobar',
+      description: 'Lorem ipsum',
+      price: 26,
+      weight: 3
+    },
+
 
   ]) 
 
   
 
+
   return (
-    <div className='container mt-5'>
-      <div className="row row-cols-2 gap-5 justify-content-center">
+    <div className='container my-5'>
+      <div className="row row-cols-5 gap-4 justify-content-center">
         {test.map( item => (
-          <div key={item.id} className='col-auto border p-2'>
-             <div className='fw-bold h4'>{item.name}</div> 
+          <div onClick={ () => console.log('click at item')} key={item.id} className='col border rounded shadow p-3' style={{'cursor': 'pointer'}}>
+             <header className='fw-bold h4'>{item.name}</header> 
              <div>{item.description}</div> 
-             <div>{item.price}</div> 
-             <div>{item.weight}</div> 
+             <div>{item.weight}</div>
              <DeleteItem id={item.id} test={test} setTest={setTest}/>
+             <div className='mt-4'>Price: <span className='fw-bold'>{'$'}{item.price}</span> </div> 
+
           </div>
         ))}
       </div>
