@@ -6,9 +6,10 @@ import { StyledTable } from "./styles";
 interface TableProps {
   products: Item[],
   onItemSelect: (item: Item) => void,
+  onItemDelete: (item: Item) => void,
 }
 
-export const Table: FC<TableProps> = ({products, onItemSelect}) => {
+export const Table: FC<TableProps> = ({products, onItemSelect, onItemDelete}) => {
   return (
     <StyledTable>
       <span className="font-bold text-4xl">Products:</span>
@@ -21,7 +22,7 @@ export const Table: FC<TableProps> = ({products, onItemSelect}) => {
             <th></th>
             <th></th>
           </tr>
-          {products.map(product => <Record product={product} onItemSelect={onItemSelect}/>)}
+          {products.map(product => <Record product={product} onItemSelect={onItemSelect} onItemDelete={onItemDelete}/>)}
         </tbody>
       </table>
     </StyledTable>

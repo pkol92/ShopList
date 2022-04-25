@@ -5,10 +5,11 @@ import { ActionBarButton } from "../ActionBar/styles";
 
 interface RecordProps {
   product: Item;
-  onItemSelect: (item: Item) => void;
+  onItemSelect: (item: Item) => void,
+  onItemDelete: (item: Item) => void,
 }
 
-export const Record: FC<RecordProps> = ({ product, onItemSelect }) => {
+export const Record: FC<RecordProps> = ({ product, onItemSelect, onItemDelete }) => {
   const { name, description, price } = product;
 
   return (
@@ -23,7 +24,7 @@ export const Record: FC<RecordProps> = ({ product, onItemSelect }) => {
       </td>
       <td className="detail-button">
         <ActionBarButton>
-          <button>Delete</button>
+          <button onClick={e => onItemDelete(product)}>Delete</button>
         </ActionBarButton>
       </td>
     </StyledRecord>

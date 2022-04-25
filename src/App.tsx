@@ -24,13 +24,17 @@ export const App = () => {
     setIsAddNewDetailsModalOpen(false);
   }
 
+  const deleteItem = (item: Item) => {
+    setProducts(oldPoducts => oldPoducts.filter(product => product.name !== item.name));
+  }
+
   return (
     <Container id="main-container">
       <div className='header-container'>
       <Header />
       <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
       </div>
-      <Table products={products} onItemSelect={changeSelectedItem}/>
+      <Table products={products} onItemSelect={changeSelectedItem} onItemDelete={deleteItem}/>
       {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem} onBackgroundClick={closeModals}/>}
       {selectedItem && <DetailsModal product={selectedItem} onBackgroundClick={closeModals}/>}
     </Container>
