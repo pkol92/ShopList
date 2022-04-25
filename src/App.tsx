@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ActionBar, AddNewRecordModal, DetailsModal, Header, Item, Table } from './components';
 import { Container } from './styles';
@@ -9,9 +9,17 @@ export const App = () => {
 
   const [products, setProducts] = useState<Item[]>([]);
 
+  useEffect(() => {
+    const storage = localStorage.getItem('products');
+    if (storage) {
+      setProducts(JSON.parse(storage) as Item[]);
+    }
+  }, []);
+
   const addItem = (newItem: Item) => {
     setProducts(products => [...products, newItem]);
     setIsAddNewDetailsModalOpen(false);
+    localStorage.setItem('products', JSON.stringify([...products, newItem]));
   }
 
   const changeSelectedItem = (item: Item) => {
