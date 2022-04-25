@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Button from "./Button";
 import { v4 as uuidv4 } from "uuid";
 import { Wrapper } from "./AddItem.styles";
+import {handleInputText, handleInputNumber} from "./addItemValidation"
 
 const AddItem = () => {
   const [item, setItem] = useState([]);
@@ -12,6 +13,10 @@ const AddItem = () => {
 
   function handleAddItemButton(e) {
     e.preventDefault();
+    handleInputText(itemName)
+    handleInputText(itemDescription)
+    handleInputNumber(itemPrice)
+    handleInputNumber(itemWeight)
 
     setItem((prevState) => {
       return [
@@ -25,11 +30,14 @@ const AddItem = () => {
         },
       ];
     });
+
+    setItemName("")
+    setItemDescription("")
+    setItemPrice("")
+    setitemWeight("")
   }
 
-  useEffect(() => {
-    console.log(item);
-  }, [item]);
+
 
   return (
     <Wrapper>
