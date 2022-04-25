@@ -10,10 +10,11 @@ export interface Item {
 }
 
 interface AddNewRecordModalInterface {
-  onAdd: (item: Item) => void
+  onAdd: (item: Item) => void,
+  onBackgroundClick: () => void
 }
 
-export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd}) => {
+export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd, onBackgroundClick}) => {
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [price, setPrice] = useState<number>(10.0);
@@ -23,7 +24,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd}) => {
   const inputStyle = "block bg-gray-100 rounded-lg px-2 placeholder:italic";
 
   return (
-    <Modal>
+    <Modal onBackgroundClick={onBackgroundClick}>
       <Container className='bg-white w-auto p-2 cl'>
         <div className='flex flex-col'>
           <label className='p-2'>

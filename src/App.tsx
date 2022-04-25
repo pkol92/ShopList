@@ -19,6 +19,11 @@ export const App = () => {
     setSelectedItem(item);
   }
 
+  const closeModals = () => {
+    setSelectedItem(null);
+    setIsAddNewDetailsModalOpen(false);
+  }
+
   return (
     <Container id="main-container">
       <div className='header-container'>
@@ -26,8 +31,8 @@ export const App = () => {
       <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
       </div>
       <Table products={products} onItemSelect={changeSelectedItem}/>
-      {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem}/>}
-      {selectedItem && <DetailsModal product={selectedItem}/>}
+      {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem} onBackgroundClick={closeModals}/>}
+      {selectedItem && <DetailsModal product={selectedItem} onBackgroundClick={closeModals}/>}
     </Container>
   );
 }
