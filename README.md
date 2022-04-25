@@ -58,5 +58,3 @@ Low priority items should be added after finishing previous parts.
 ### Tips
 
 - Its allowed to use any helper libraries, components or frameworks that will help make a work done
-
-
