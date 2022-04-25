@@ -12,8 +12,8 @@ interface TableProps {
 export const Table: FC<TableProps> = ({products, onItemSelect, onItemDelete}) => {
   return (
     <StyledTable>
-      <span className="font-bold text-4xl">Products:</span>
-      <table>
+      <span className="font-bold text-4xl mt-4">Products:</span>
+      <table className="my-6">
         <tbody>
         <tr>
             <th>Name</th>
