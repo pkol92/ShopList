@@ -14,7 +14,8 @@ const AddItem = () => {
 
   function handleAddItemButton(e) {
     e.preventDefault();
- 
+    
+    if(itemName && itemDescription && itemWeight && itemPrice){
     setItems((prevState) => {
       return [
         ...prevState,
@@ -27,6 +28,8 @@ const AddItem = () => {
         },
       ];
     });
+  }
+  else throw alert("Rubryki muszą być wypelnione")
 
     setItemName("")
     setItemDescription("")
