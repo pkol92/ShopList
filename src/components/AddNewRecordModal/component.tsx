@@ -22,7 +22,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalProps> = ({
   const [price, setPrice] = useState(0);
   const [weight, setWeight] = useState(0);
 
-  function handleClick() {
+  function handleSubmit() {
     if (name && description && price && weight) {
       setItems([...items, { name, description, price, weight }]);
 
@@ -42,7 +42,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalProps> = ({
         {/* Task #2 */}
         <h4 className="form-title">Add new item</h4>
 
-        <form className="item-form">
+        <form className="item-form" onSubmit={handleSubmit}>
           <label className="input-label">
             Name
             <input
@@ -79,7 +79,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalProps> = ({
             />
           </label>
 
-          <input type="submit" onClick={handleClick} />
+          <input type="submit" />
         </form>
 
         {/* Task #7 */}

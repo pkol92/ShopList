@@ -16,17 +16,24 @@ export const ActionBar: FC<ActionBarProps> = ({
   isAddNewDetailsModalOpen,
   setIsAddNewDetailsModalOpen,
 }: ActionBarProps) => {
+  console.log(isAddNewDetailsModalOpen);
   return (
-    <ActionBarContainer>
-      {/* Task #1 */}
-      <button onClick={() => setIsAddNewDetailsModalOpen(true)}>
-        Add new item
-      </button>
+    <>
+      <ActionBarContainer>
+        {/* Task #1 */}
+        <button onClick={() => setIsAddNewDetailsModalOpen(true)}>
+          Add new item
+        </button>
+      </ActionBarContainer>
+
       {isAddNewDetailsModalOpen ? (
-        <AddNewRecordModal items={items} setItems={setItems} />
+        <>
+          <p>cos</p>
+          <AddNewRecordModal items={items} setItems={setItems} />
+        </>
       ) : (
         ""
       )}
-    </ActionBarContainer>
+    </>
   );
 };
