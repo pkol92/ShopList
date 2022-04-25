@@ -1,14 +1,18 @@
 import React, { FC } from 'react';
+import { Item } from '../AddNewRecordModal/component';
 import { Record } from '../Record';
 import { StyledTable } from './styles';
 
-export const Table: FC = () => {
+interface TableProps {
+  products: Item[]
+}
+
+export const Table: FC<TableProps> = ({products}) => {
   return (
     <StyledTable>
-        Task #3.1
-        Task #9
+        <span className='font-bold text-4xl'>Products:</span>
         <tbody>
-         <Record />
+          {products.map(product => <Record product={product} />)}
         </tbody>
     </StyledTable> 
   )

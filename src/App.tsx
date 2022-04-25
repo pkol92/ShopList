@@ -20,6 +20,7 @@ export const App = () => {
       <Header />
       <ActionBar onOpen={() => setIsAddNewDetailsModalOpen(true)}/>
       </div>
+      <Table products={products}/>
       {isAddNewDetailsModalOpen && <AddNewRecordModal onAdd={addItem}/>}
     </Container>
   );
