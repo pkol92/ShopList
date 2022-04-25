@@ -20,7 +20,7 @@ export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd}) => {
 
   const onClick = () => onAdd({name: name, description: description, price: price});
    
-  const inputStyle = "block bg-gray-300 rounded-lg px-2";
+  const inputStyle = "block bg-gray-100 rounded-lg px-2 placeholder:italic";
 
   return (
     <Modal>
@@ -28,15 +28,15 @@ export const AddNewRecordModal: FC<AddNewRecordModalInterface> = ({onAdd}) => {
         <div className='flex flex-col'>
           <label className='p-2'>
             Name
-            <input type="text" className={inputStyle} onChange={e => setName(e.target.value)} />
+            <input type="text" className={inputStyle} onChange={e => setName(e.target.value)} placeholder='Name'/>
           </label>
           <label className='p-2'>
             Description
-            <input type="text" className={inputStyle} onChange={e => setDescription(e.target.value)} />
+            <input type="text" className={inputStyle} onChange={e => setDescription(e.target.value) } placeholder='Description'/>
           </label>
           <label className='p-2'>
             Price
-            <input type="number" className={inputStyle} onChange={e => setPrice(parseFloat(e.target.value))} />
+            <input type="number" className={inputStyle} onChange={e => setPrice(parseFloat(e.target.value))}/>
           </label>
           
           </div>
