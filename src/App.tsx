@@ -22,11 +22,12 @@ export const App = () => {
       <ActionBar
         items={items}
         setItems={setItems}
+        isAddNewDetailsModalOpen={isAddNewDetailsModalOpen}
         setIsAddNewDetailsModalOpen={setIsAddNewDetailsModalOpen}
       />
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
-      {isAddNewDetailsModalOpen && <DetailsModal />}
+      {/* {isAddNewDetailsModalOpen && <DetailsModal />} */}
     </Container>
   );
 };
