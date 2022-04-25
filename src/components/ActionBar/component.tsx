@@ -8,7 +8,7 @@ export const ActionBar: FC = () => {
   return (
     <ActionBarContainer>
       <Button onClick={() => setShow(!show)}>Add Item</Button>
-      {show && <DetailsModal />}
+      {show && <DetailsModal setShow={setShow} />}
     </ActionBarContainer>
   );
 };
