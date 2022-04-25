@@ -18,7 +18,7 @@ export const Record: FC<RecordProps> = ({ product, onItemSelect }) => {
       <td>{price}</td>
       <td className="detail-button">
         <ActionBarButton>
-          <button>More</button>
+          <button onClick={e => onItemSelect(product)}>More</button>
         </ActionBarButton>
       </td>
       <td className="detail-button">
