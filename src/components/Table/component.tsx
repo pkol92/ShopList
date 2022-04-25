@@ -18,6 +18,7 @@ export const Table: FC<TableProps> = ({products, onItemSelect}) => {
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th></th>
           </tr>
           {products.map(product => <Record product={product} onItemSelect={onItemSelect}/>)}
         </tbody>

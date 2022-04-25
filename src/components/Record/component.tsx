@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Item } from '../AddNewRecordModal';
 import { StyledRecord } from './styles';
+import {ActionBarButton} from '../ActionBar/styles'
 
 interface RecordProps {
   product: Item,
@@ -15,6 +16,11 @@ export const Record: FC<RecordProps> = ({product, onItemSelect}) => {
         <td>{name}</td>
         <td>{description}</td>
         <td>{price}</td>
+        <td className="detail-button">
+          <ActionBarButton>
+              <button>More</button>
+              </ActionBarButton>
+            </td>
     </StyledRecord> 
   )
 }
