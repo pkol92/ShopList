@@ -1,13 +1,12 @@
 
-import React from 'react';
 
 import Button from '../AddItem/Button';
 
 
-const DeleteItem = ({id, test, setTest}) => {
+const DeleteItem = ({id, items, setTest}) => {
 
     function handleDelete(e){
-     setTest( test.filter(item=> id !== item.id))
+     setTest( items.filter(item=> id !== item.id))
     }
     return ( 
     <Button

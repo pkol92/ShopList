@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 const ItemsContext = createContext()
@@ -66,9 +66,17 @@ export const ItemsProvider = ({children}) => {
 
 
   ]
-  const [items, setItems] = useState(initialState)
+  const [items, setItems] = useState(()=>{
+    const data = localStorage.getItem("items")
+    
+    return data ? JSON.parse(data) : initialState
+  })
   // const addToItems = (item) => setItems([...items, item])
   // const removeFromItems = (item) => setItems(items.filter( i => i !== item))
+
+  useEffect(()=>{
+    localStorage.setItem("items", JSON.stringify(items))
+  },[items])
 
   return (
     <>

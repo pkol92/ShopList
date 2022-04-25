@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 // import { useState } from 'react'
 import { useItems } from '../../contexts/Items'
-// import DeleteItem from '../DeleteItem/DeleteItem'
+import DeleteItem from '../DeleteItem/DeleteItem'
 export const Table = () => {
 
 
@@ -17,7 +17,7 @@ export const Table = () => {
              <header className='fw-bold h4'>{item.name}</header> 
              <div>{item.description}</div> 
              <div>{item.weight}</div>
-             {/* <DeleteItem id={item.id} test={test} setTest={setTest}/> */}
+             <DeleteItem id={item.id} items={items} setTest={setItems}/>
              <div className='mt-4'>Price: <span className='fw-bold'>{'$'}{item.price}</span> </div> 
 
           </div>
