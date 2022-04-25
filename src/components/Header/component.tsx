@@ -1,11 +1,14 @@
-import React, { FC } from 'react';
-import { StyledHeader } from './styles';
+import React, { FC } from "react";
+import { StyledHeader, Logo, WidthWrapper } from "./styles";
+import { ActionBar } from "../ActionBar";
 
 export const Header: FC = () => {
   return (
     <StyledHeader>
-        Task #6
-    </StyledHeader> 
-  )
-}
-    
+      <WidthWrapper>
+        <Logo>Listownik</Logo>
+        <ActionBar />
+      </WidthWrapper>
+    </StyledHeader>
+  );
+};
