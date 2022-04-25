@@ -1,15 +1,24 @@
 import React, { FC } from 'react';
 import { Record } from '../Record';
 import { StyledTable } from './styles';
+import { ShopItem } from '../../App'
 
-export const Table: FC = () => {
+interface Table {
+  items: ShopItem[],
+  isOpen: () => void
+}
+
+export const Table: FC<Table> = ( {items} ) => {
   return (
     <StyledTable>
-        Task #3.1
-        Task #9
-        <tbody>
+        {items.map((el) => 
+        <ul>
+          <li>{el.name}</li>
+          <li>{el.price}</li>
+        </ul>)}
+        {/* <tbody>
          <Record />
-        </tbody>
+        </tbody> */}
     </StyledTable> 
   )
 }

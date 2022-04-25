@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IterationStatement } from "typescript";
 
 import { ActionBar, DetailsModal, Header, Table } from "./components";
 import { Container } from "./styles";
@@ -11,10 +12,18 @@ export interface ShopItem {
 }
 
 export const App = () => {
-  const [items, setItems] = useState<ShopItem[]>([]);
+  const [items, setItems] = useState<ShopItem[]>([{name: 'pen', price: 2, weight: 3, description: 'trolo'}]);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] =
     useState(false);
+
+  function isOpen () {
+    setIsDetailsModalOpen(!isDetailsModalOpen)
+  }
+
+  function closeDetailPage() {
+    setIsDetailsModalOpen(false)
+  }
 
   return (
     <Container id="main-container">
@@ -25,9 +34,9 @@ export const App = () => {
         isAddNewDetailsModalOpen={isAddNewDetailsModalOpen}
         setIsAddNewDetailsModalOpen={setIsAddNewDetailsModalOpen}
       />
-      <Table />
-      {isDetailsModalOpen && <DetailsModal />}
-      {/* {isAddNewDetailsModalOpen && <DetailsModal />} */}
+      <Table items={items} isOpen={isOpen}/>
+      {/* {isDetailsModalOpen && <DetailsModal />}
+      {isAddNewDetailsModalOpen && <DetailsModal closeDetailPage={closeDetailPage} name='123' id={1} description='123' weight={4} price={6}  />} */}
     </Container>
   );
 };
