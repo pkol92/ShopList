@@ -10,7 +10,9 @@ export const StyledHeader = styled.nav`
 
 
 export const StyledLogo = styled.h1`
-  width:30%;
+  img{
+    max-width: 100px;
+  }
 
 `
 ;
