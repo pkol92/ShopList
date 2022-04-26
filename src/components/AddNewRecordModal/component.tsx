@@ -14,7 +14,7 @@ export const AddNewRecordModal: FC = () => {
   function handleSubmit() {
     if (name && description && price) {
       context.addItem( {name, description, price, id: (Math.random())});
-
+      context.showNewItem(false);
       // setIsAddNewDetailsModalOpen(false);
     }
   }

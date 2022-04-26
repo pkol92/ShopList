@@ -7,8 +7,9 @@ const GlobalState = (props: { children: any; }) => {
     { id: 1, name: 'tomato', price: 0.99, description: 'nice tomato' },
     { id: 2, name: 'pickle', price: 1.99, description: 'some pickle' },
     { id: 3, name: 'orange', price: 3.99, description: 'super food'},
-  ]
-    const [items, setItems] = useState(initialProducts);
+  ];
+
+  const [items, setItems] = useState(initialProducts);
 //   const [cartState, dispatch] = useReducer(shopReducer, { cart: [] });
 
   const addItem = (item: any) => {
@@ -16,6 +17,12 @@ const GlobalState = (props: { children: any; }) => {
       return setItems(item);
     }, 700);
   };
+
+  const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] = useState(false);
+
+  const showNewItem = (visible: boolean) => {
+    setIsAddNewDetailsModalOpen(visible);
+  }
 
 //   const removeProductFromCart = productId => {
 //     setTimeout(() => {
@@ -27,7 +34,9 @@ const GlobalState = (props: { children: any; }) => {
     <ItemContext.Provider
       value={{
         items: items, 
-        addItem: addItem
+        addItem: addItem,
+        showNewItem: showNewItem,
+        isNewItemOpen: isAddNewDetailsModalOpen,
       }
         
         // addProductToCart: addProductToCart,

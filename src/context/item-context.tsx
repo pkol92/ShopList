@@ -11,6 +11,8 @@ export interface Item {
 interface ItemContextInterface {
   items: Item[];
   addItem: (item: Item) => void;
+  showNewItem: (visible: boolean) => void;
+  isNewItemOpen: boolean;
 }
 
 // // export default React.createContext({
@@ -25,7 +27,9 @@ interface ItemContextInterface {
 
 const ItemContext = createContext<ItemContextInterface>({
   items : [],
-  addItem: (item)=> {}
+  addItem: (item)=> {},
+  showNewItem: (visible) => {},
+  isNewItemOpen: false
 });
 
 export default ItemContext;
