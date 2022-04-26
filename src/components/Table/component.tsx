@@ -8,7 +8,7 @@ export const Table: FC = () => {
 
   return (
     <StyledTable>
-      {contex.map((el)=> 
+      {contex.items.map((el)=> 
       <ul>
         <li key={el.id}>{el.name}</li>
         <li key={el.id}>{el.price}</li>

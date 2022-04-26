@@ -1,23 +1,31 @@
 import React from 'react';
 import {createContext} from 'react';
 
-interface Item {
-  id: string;
+export interface Item {
+  id: number;
   name: string;
   price: number;
   description: string;
 }
 
-// export default React.createContext({
-//   items: []
-// });
+interface ItemContextInterface {
+  items: Item[];
+  addItem: (item: Item) => void;
+}
 
-const items: Item[] = [
-  // { id: 'p1', name: 'tomato', price: 0.99, description: 'nice tomato' },
-  // { id: 'p2', name: 'pickle', price: 1.99, description: 'some pickle' },
-  // { id: 'p3', name: 'orange', price: 3.99, description: 'super food'},
-]
+// // export default React.createContext({
+// //   items: []
+// // });
 
-const ItemContext = createContext(items);
+// const iitems = [
+//   { id: 'p1', name: 'tomato', price: 0.99, description: 'nice tomato' },
+//   { id: 'p2', name: 'pickle', price: 1.99, description: 'some pickle' },
+//   { id: 'p3', name: 'orange', price: 3.99, description: 'super food'},
+// ]
+
+const ItemContext = createContext<ItemContextInterface>({
+  items : [],
+  addItem: (item)=> {}
+});
 
 export default ItemContext;
