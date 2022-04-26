@@ -1,23 +1,26 @@
 import React, { FC, useContext, useState } from 'react';
-import { text } from 'stream/consumers';
 import ItemContext from '../../context/item-context';
 import { Modal } from '../Modal';
 import { Container } from './styles';
 
 export const AddNewRecordModal: FC = () => {
   const context = useContext(ItemContext);
+  const {items} = context;
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
 
-  function handleSubmit() {
-    if (name && description && price) {
-      context.addItem( {name, description, price, id: (Math.random())});
-      context.showNewItem(false);
+
+    function handleSubmit(e: any) {
+      e.preventDefault();
+      if (name && description && price) {
+      context.addItem( [...items, {name, description, price, id: 8}]);
+      // context.showNewItem(false);
       // setIsAddNewDetailsModalOpen(false);
     }
   }
+  
 
   return (
     <Modal>

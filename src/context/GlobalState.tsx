@@ -12,7 +12,7 @@ const GlobalState = (props: { children: any; }) => {
   const [items, setItems] = useState(initialProducts);
 //   const [cartState, dispatch] = useReducer(shopReducer, { cart: [] });
 
-  const addItem = (item: any) => {
+  const addItem = (item: Item[]) => {
     setTimeout(() => {
       return setItems(item);
     }, 700);

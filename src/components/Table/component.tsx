@@ -4,11 +4,12 @@ import { Record } from '../Record';
 import { StyledTable } from './styles';
 
 export const Table: FC = () => {
-  const contex = useContext(ItemContext);
+  const context = useContext(ItemContext);
+  // const {items} = context;
 
   return (
     <StyledTable>
-      {contex.items.map((el)=> 
+      {context.items.map((el)=> 
       <ul>
         <li key={el.id}>{el.name}</li>
         <li key={el.id}>{el.price}</li>

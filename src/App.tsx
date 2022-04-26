@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useContext } from 'react';
-import { ActionBar, DetailsModal, Header, Table } from './components';
+import { ActionBar, DetailsModal, Header, Table, AddNewRecordModal } from './components';
 import GlobalState from './context/GlobalState';
 import { Container } from './styles';
 import ItemContext from './context/item-context';
@@ -10,7 +10,9 @@ export const App = () => {
   const context = useContext(ItemContext);
 
   const isDetailsModalOpen = false;
-  const isAddNewDetailsModalOpen = context.isNewItemOpen;
+
+  const isAddNewDetailsModalOpen = true;
+
   return (
     <GlobalState>
       <Container id="main-container">
@@ -18,9 +20,8 @@ export const App = () => {
       <ActionBar />
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
-      {isAddNewDetailsModalOpen && <DetailsModal />}
+      {isAddNewDetailsModalOpen && <AddNewRecordModal />}
       </Container>
     </GlobalState>
-    
   );
 }

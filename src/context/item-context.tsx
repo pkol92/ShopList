@@ -10,7 +10,7 @@ export interface Item {
 
 interface ItemContextInterface {
   items: Item[];
-  addItem: (item: Item) => void;
+  addItem: (item: Item[]) => void;
   showNewItem: (visible: boolean) => void;
   isNewItemOpen: boolean;
 }
