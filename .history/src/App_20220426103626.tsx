@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ActionBar, DetailsModal, Header, Table } from './components';
 import GlobalState from './context/GlobalState';
+import ItemContext from './context/item-context';
 import { Container } from './styles';
 
 export const App = () => {

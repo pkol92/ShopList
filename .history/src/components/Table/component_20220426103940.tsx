@@ -8,11 +8,7 @@ export const Table: FC = () => {
 
   return (
     <StyledTable>
-      {contex.products.map((el)=> 
-      <ul>
-        <li key={el.id}>{el.name}</li>
-        <li key={el.id}>{el.price}</li>
-      </ul>)}
+      {contex.products.map((el)=> el.name)}
         Task #3.1
         Task #9
         <tbody>

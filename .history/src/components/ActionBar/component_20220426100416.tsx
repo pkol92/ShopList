@@ -4,7 +4,7 @@ import { ActionBarContainer } from './styles';
 export const ActionBar: FC = () => {
   return (
     <ActionBarContainer>
-        <button>Add item to the list</button>
+        Task #1
     </ActionBarContainer> 
   )
 }
