@@ -11,7 +11,8 @@ export const App = () => {
 
   const isDetailsModalOpen = false;
 
-  const isAddNewDetailsModalOpen = true;
+  const isAddNewDetailsModalOpen = context;
+  // const {isNewItemOpen} = context
 
   return (
     <GlobalState>
@@ -21,6 +22,7 @@ export const App = () => {
       <Table />
       {isDetailsModalOpen && <DetailsModal />}
       {isAddNewDetailsModalOpen && <AddNewRecordModal />}
+      {/* {{isNewItemOpen} && <AddNewRecordModal />} */}
       </Container>
     </GlobalState>
   );

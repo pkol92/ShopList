@@ -13,15 +13,16 @@ const GlobalState = (props: { children: any; }) => {
 //   const [cartState, dispatch] = useReducer(shopReducer, { cart: [] });
 
   const addItem = (item: Item[]) => {
-    setTimeout(() => {
-      return setItems(item);
-    }, 700);
+    // setTimeout(() => {
+    //   return setItems(item);
+    // }, 700);
+    return setItems(item);
   };
 
   const [isAddNewDetailsModalOpen, setIsAddNewDetailsModalOpen] = useState(false);
 
   const showNewItem = (visible: boolean) => {
-    setIsAddNewDetailsModalOpen(visible);
+    return setIsAddNewDetailsModalOpen(visible);
   }
 
 //   const removeProductFromCart = productId => {
@@ -36,7 +37,7 @@ const GlobalState = (props: { children: any; }) => {
         items: items, 
         addItem: addItem,
         showNewItem: showNewItem,
-        isNewItemOpen: isAddNewDetailsModalOpen,
+        isAddNewDetailsModalOpen: isAddNewDetailsModalOpen,
       }
         
         // addProductToCart: addProductToCart,

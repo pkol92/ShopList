@@ -12,7 +12,7 @@ interface ItemContextInterface {
   items: Item[];
   addItem: (item: Item[]) => void;
   showNewItem: (visible: boolean) => void;
-  isNewItemOpen: boolean;
+  isAddNewDetailsModalOpen: boolean;
 }
 
 // // export default React.createContext({
@@ -29,7 +29,7 @@ const ItemContext = createContext<ItemContextInterface>({
   items : [],
   addItem: (item)=> {},
   showNewItem: (visible) => {},
-  isNewItemOpen: false
+  isAddNewDetailsModalOpen: false
 });
 
 export default ItemContext;

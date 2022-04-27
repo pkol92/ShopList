@@ -6,6 +6,7 @@ import { Container } from './styles';
 export const AddNewRecordModal: FC = () => {
   const context = useContext(ItemContext);
   const {items} = context;
+  // const showNewItem = context;
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -16,6 +17,11 @@ export const AddNewRecordModal: FC = () => {
       e.preventDefault();
       if (name && description && price) {
       context.addItem( [...items, {name, description, price, id: 8}]);
+      context.showNewItem(false);
+      // setTimeout(()=> {
+      //   showNewItem(false)
+      // },700);
+      
       // context.showNewItem(false);
       // setIsAddNewDetailsModalOpen(false);
     }
